@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- 탭 화면 -->
     <FrameLayout
         android:id="@+id/nav"
         android:layout_width="match_parent"
@@ -16,6 +17,7 @@
 
     </FrameLayout>
 
+    <!-- 하단바 -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/tabNav"
         android:layout_width="match_parent"
