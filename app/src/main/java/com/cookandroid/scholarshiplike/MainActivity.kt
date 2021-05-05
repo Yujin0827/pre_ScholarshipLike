@@ -25,8 +25,7 @@ open class MainActivity : AppCompatActivity() {
     private fun setFrag(fragNum : Int) {
         val ft = supportFragmentManager.beginTransaction()
 
-        when(fragNum)
-        {
+        when(fragNum) {
             0 -> {
                 ft.replace(R.id.nav, HomeTabActivity()).commit()
             }
@@ -39,6 +38,6 @@ open class MainActivity : AppCompatActivity() {
             3 -> {
                 ft.replace(R.id.nav, ProfileTabActivity()).commit()
             }
-        }
+        }//test
     }
 }
