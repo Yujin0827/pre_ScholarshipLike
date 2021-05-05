@@ -40,5 +40,7 @@ open class MainActivity : AppCompatActivity() {
                 ft.replace(R.id.nav, ProfileTabActivity()).commit()
             }
         }
+
+        //아무것도 아님
     }
 }
