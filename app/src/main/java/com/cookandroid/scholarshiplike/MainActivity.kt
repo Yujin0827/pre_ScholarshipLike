@@ -39,6 +39,8 @@ open class MainActivity : AppCompatActivity() {
             3 -> {
                 ft.replace(R.id.nav, ProfileTabActivity()).commit()
             }
+
+            //test
         }
     }
 }
