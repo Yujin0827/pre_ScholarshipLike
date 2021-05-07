@@ -3,12 +3,20 @@ package com.cookandroid.scholarshiplike
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
 open class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // 실행시 툴바 호출 (hometab에만 적용)
+        var toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar!!.setTitle("장학라이크")
+        // title 장학라이크로 설정
+
 
         setFrag(0) // 첫 화면 = homeTabActivity
 
