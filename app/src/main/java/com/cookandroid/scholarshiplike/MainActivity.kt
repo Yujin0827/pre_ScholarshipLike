@@ -1,15 +1,25 @@
 package com.cookandroid.scholarshiplike
 
 import android.os.Bundle
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 open class MainActivity : AppCompatActivity() {
+
+    //탭 화면 변수 생성
+    private val hometab = HomeTabActivity()
+    private val scholartab = ScholarshipTabActivity()
+    private val magazinetab = MagazineTabActivity()
+    private val profiletab = ProfileTabActivity()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        initNavigationBar()
 
         // 실행시 툴바 호출 (hometab에만 적용)
         var toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -17,29 +27,34 @@ open class MainActivity : AppCompatActivity() {
         supportActionBar!!.setTitle("장학라이크")
         // title 장학라이크로 설정
 
-
-        setFrag(0) // 첫 화면 = homeTabActivity
-
-
     }
 
-    //하단바 교체가 일어나는 실행문
-    private fun setFrag(fragNum : Int) {
-        val ft = supportFragmentManager.beginTransaction()
-
-        when(fragNum) {
-            0 -> {
-                ft.replace(R.id.nav, HomeTabActivity()).commit()
-            }
-            1 -> {
-                ft.replace(R.id.nav, ScholarshipTabActivity()).commit()
-            }
-            2 -> {
-                ft.replace(R.id.nav, MagazineTabActivity()).commit()
-            }
-            3 -> {
-                ft.replace(R.id.nav, ProfileTabActivity()).commit()
+    //하단바 누르면 탭 화면 전환
+    private fun initNavigationBar() {
+        tabNav.run {
+            setOnNavigationItemSelectedListener {
+                when(it.itemId) {
+                    R.id.hometab -> {
+                        changeFragment(hometab)
+                    }
+                    R.id.scholarshiptab -> {
+                        changeFragment(scholartab)
+                    }
+                    R.id.magazinetab -> {
+                        changeFragment(magazinetab)
+                    }
+                    R.id.profiletab -> {
+                        changeFragment(profiletab)
+                    }
+                }
+                true
             }
         }
     }
+
+    //하단바 - 탭 화면(프래그먼트) 연결
+    private fun changeFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction().replace(R.id.nav, fragment).commit()
+    }
+
 }
