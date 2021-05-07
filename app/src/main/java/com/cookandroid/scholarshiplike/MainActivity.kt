@@ -23,6 +23,7 @@ open class MainActivity : AppCompatActivity() {
 
     }
 
+    //하단바 누르면 탭 화면 전환
     private fun initNavigationBar() {
         tabNav.run {
             setOnNavigationItemSelectedListener {
@@ -30,12 +31,22 @@ open class MainActivity : AppCompatActivity() {
                     R.id.homeTab -> {
                         changeFragment(hometab)
                     }
+                    R.id.scholarshipTab -> {
+                        changeFragment(scholartab)
+                    }
+                    R.id.magazineTab -> {
+                        changeFragment(magazinetab)
+                    }
+                    R.id.profileTab -> {
+                        changeFragment(profiletab)
+                    }
                 }
                 true
             }
         }
     }
 
+    //하단바 - 탭 화면(프래그먼트) 연결
     private fun changeFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.nav, fragment).commit()
     }
