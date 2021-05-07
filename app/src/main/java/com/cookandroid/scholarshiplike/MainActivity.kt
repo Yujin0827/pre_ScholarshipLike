@@ -12,12 +12,6 @@ open class MainActivity : AppCompatActivity() {
 
         setFrag(0) // 첫 화면 = homeTabActivity
 
-        boolean onNavigationItemSelected(MenuItem menuItem) {
-            switch (menuItem.getItemId()) {
-
-            }
-            return true;
-        }
 
     }
 
