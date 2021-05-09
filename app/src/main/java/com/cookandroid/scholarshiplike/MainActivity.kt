@@ -10,14 +10,16 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         setFrag(0) // 첫 화면 = homeTabActivity
 
-        boolean onNavigationItemSelected(MenuItem menuItem) {
-            switch (menuItem.getItemId()) {
-
-            }
-            return true;
-        }
+//        boolean onNavigationItemSelected(MenuItem menuItem) {
+//            switch (menuItem.getItemId()) {
+//
+//            }
+//            return true;
+//        }
 
     }
 
