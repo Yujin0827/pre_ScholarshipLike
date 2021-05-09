@@ -42,7 +42,7 @@ open class MainActivity : AppCompatActivity() {
                 ft.replace(R.id.nav, ProfileTabActivity()).commit()
             }
 
-            //test
+            //branch test
         }
     }
 }
