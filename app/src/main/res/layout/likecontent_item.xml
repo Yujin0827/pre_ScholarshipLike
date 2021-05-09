@@ -6,7 +6,8 @@
     android:orientation="horizontal">
 
     <TextView
-        android:layout_width="0"
+        android:id="@+id/textNo"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="#7DDFE2"
@@ -14,7 +15,8 @@
         android:text="Text" />
 
     <TextView
-        android:layout_width="0"
+        android:id="@+id/textTitle"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="4"
         android:background="#6FCFC6"
@@ -22,7 +24,8 @@
         android:text="Text" />
 
     <TextView
-        android:layout_width="0"
+        android:id="@+id/textDate"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
         android:background="#59BEDF"

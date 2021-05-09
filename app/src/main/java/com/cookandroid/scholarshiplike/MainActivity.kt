@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import com.cookandroid.scholarshiplike.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -15,10 +16,14 @@ open class MainActivity : AppCompatActivity() {
     private val magazinetab = MagazineTabActivity()
     private val profiletab = ProfileTabActivity()
 
+    private val binding by lazy{ ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //좋아요 누른 게시물
+        setContentView(binding.root)
 
         // 툴바 설정
         var toolbar = findViewById<Toolbar>(R.id.toolbar)
