@@ -4,29 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <!-- 상단바 구현 -->
-    <include
-        layout="@layout/toolbar"
-        android:id="@+id/mytoolbar"
-        android:layout_height="300dp"
-        android:layout_width="match_parent"
-        />
-
-
     <!-- 탭 화면 -->
+    <!-- 하단바 -->
+
     <FrameLayout
         android:id="@+id/nav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@+id/tabNav"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
     </FrameLayout>
 
-    <!-- 하단바 -->
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/tabNav"
         android:layout_width="match_parent"

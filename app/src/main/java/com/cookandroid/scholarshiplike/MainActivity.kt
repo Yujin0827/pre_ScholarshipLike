@@ -20,11 +20,14 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // 실행시 툴바 호출
-        var toolbar = findViewById<Toolbar>(R.id.mytoolbar)
+        // 툴바 설정
+        var toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        // title 장학라이크로 설정
+        // 실행 시 메인화면 hometab으로 설정
+        changeFragment(hometab)
+
+        //하단바
         initNavigationBar()
     }
 
