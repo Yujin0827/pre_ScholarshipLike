@@ -8,7 +8,10 @@
     <!-- 상단바 구현 -->
     <include
         layout="@layout/toolbar"
-        android:id="@+id/toolbar"/>
+        android:id="@+id/mytoolbar"
+        android:layout_height="300dp"
+        android:layout_width="match_parent"
+        />
 
 
     <!-- 탭 화면 -->
