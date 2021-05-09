@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 open class MainActivity : AppCompatActivity() {
 
     //탭 화면 변수 생성
@@ -19,14 +20,12 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initNavigationBar()
-
-        // 실행시 툴바 호출 (hometab에만 적용)
-        var toolbar = findViewById<Toolbar>(R.id.toolbar)
+        // 실행시 툴바 호출
+        var toolbar = findViewById<Toolbar>(R.id.mytoolbar)
         setSupportActionBar(toolbar)
-        supportActionBar!!.setTitle("장학라이크")
-        // title 장학라이크로 설정
 
+        // title 장학라이크로 설정
+        initNavigationBar()
     }
 
     //하단바 누르면 탭 화면 전환
@@ -37,6 +36,7 @@ open class MainActivity : AppCompatActivity() {
                     R.id.hometab -> {
                         changeFragment(hometab)
                     }
+
                     R.id.scholarshiptab -> {
                         changeFragment(scholartab)
                     }
