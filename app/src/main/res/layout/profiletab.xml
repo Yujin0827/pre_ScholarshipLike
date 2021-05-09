@@ -6,4 +6,274 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- 상단 프로필 사진, "홍길동님, 반갑습니다!" Horizontal Layout-->
+
+    <LinearLayout
+        android:id="@+id/profileTitleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D2D9F7"
+        android:orientation="horizontal"
+        android:padding="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- 프로필 사진, "프로필 수정" Vertical Layout -->
+        <LinearLayout
+            android:id="@+id/profileTitleIconLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40px"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnProfileIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:src="@drawable/IcProfileUser" />
+
+            <TextView
+                android:id="@+id/txtProfileChange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:text="프로필 수정"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <!-- "홍길동님, 반갑습니다!" Horizontal Layout -->
+        <LinearLayout
+            android:id="@+id/profileTitleHelloLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="40px"
+            android:orientation="horizontal">
+
+            <!-- "홍길동" -->
+            <Button
+                android:id="@+id/btnProfileUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:minWidth="0px"
+                android:minHeight="0px"
+                android:text="홍길동"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- "님, 반갑습니다!" -->
+            <TextView
+                android:id="@+id/txtProfileHello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="님, 반갑습니다!"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- 내정보  리스트 -->
+    <LinearLayout
+        android:id="@+id/profileListLayout"
+        android:layout_width="match_parent"
+        android:layout_height="622dp"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical"
+        android:padding="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profileTitleLayout">
+
+        <!-- 내 조건 수정 -->
+        <LinearLayout
+            android:id="@+id/profileList_changeCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            android:paddingTop="15sp"
+            android:paddingBottom="15sp"
+            android:paddingLeft="30sp"
+            android:paddingRight="30sp"
+            android:layout_margin="5sp"
+            android:background="@drawable/profile_listborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="내 조건 수정"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <!-- 알림설정 (장학금 관련) -->
+        <LinearLayout
+            android:id="@+id/profileList_setAlarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            android:paddingTop="15sp"
+            android:paddingBottom="15sp"
+            android:paddingLeft="30sp"
+            android:paddingRight="30sp"
+            android:layout_margin="5sp"
+            android:background="@drawable/profile_listborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="알림설정 (장학금 관련)"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10sp">
+
+                <!-- 알림설정 - 앱 전체 -->
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="앱 전체"
+                    android:padding="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2sp"
+                    android:background="#c9c9c9"/>
+
+                <!-- 알림설정 - 장학금 -->
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="장학금"
+                    android:padding="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2sp"
+                    android:background="#c9c9c9"/>
+
+                <!-- 알림설정 - 매거진 -->
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="매거진"
+                    android:padding="10sp"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2sp"
+                    android:background="#c9c9c9"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 좋아요 누른 게시물 -->
+        <LinearLayout
+            android:id="@+id/profileList_likePost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            android:paddingTop="15sp"
+            android:paddingBottom="15sp"
+            android:paddingLeft="30sp"
+            android:paddingRight="30sp"
+            android:layout_margin="5sp"
+            android:background="@drawable/profile_listborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="좋아요 누른 게시물"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <!-- 앱 정보 -->
+        <LinearLayout
+            android:id="@+id/profileList_appInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            android:paddingTop="15sp"
+            android:paddingBottom="15sp"
+            android:paddingLeft="30sp"
+            android:paddingRight="30sp"
+            android:layout_margin="5sp"
+            android:background="@drawable/profile_listborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="앱 정보"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <!-- 문의 -->
+        <LinearLayout
+            android:id="@+id/profileList_inquiry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            android:paddingTop="15sp"
+            android:paddingBottom="15sp"
+            android:paddingLeft="30sp"
+            android:paddingRight="30sp"
+            android:layout_margin="5sp"
+            android:background="@drawable/profile_listborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="문의"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <!-- 로그아웃 -->
+        <LinearLayout
+            android:id="@+id/profileList_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_vertical"
+            android:orientation="vertical"
+            android:paddingTop="15sp"
+            android:paddingBottom="15sp"
+            android:paddingLeft="30sp"
+            android:paddingRight="30sp"
+            android:layout_margin="5sp"
+            android:background="@drawable/profile_listborder">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="로그아웃"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
