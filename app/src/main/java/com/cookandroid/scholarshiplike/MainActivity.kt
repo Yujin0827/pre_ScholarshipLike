@@ -15,7 +15,6 @@ open class MainActivity : AppCompatActivity() {
     private val magazinetab = MagazineTabActivity()
     private val profiletab = ProfileTabActivity()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,6 +28,8 @@ open class MainActivity : AppCompatActivity() {
 
         //하단바
         initNavigationBar()
+
+
     }
 
     //하단바 누르면 탭 화면 전환
@@ -39,7 +40,6 @@ open class MainActivity : AppCompatActivity() {
                     R.id.hometab -> {
                         changeFragment(hometab)
                     }
-
                     R.id.scholarshiptab -> {
                         changeFragment(scholartab)
                     }
