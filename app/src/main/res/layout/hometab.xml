@@ -11,61 +11,100 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <ViewFlipper
-            android:id="@+id/banner"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topBar"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@+id/searchView"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/bannerSlider"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.35"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-        </ViewFlipper>
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toTopOf="@+id/button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/banner"
-            app:layout_constraintWidth_percent="0.7" />
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/logo"
+                app:layout_constraintWidth_percent="0.7" />
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_marginBottom="16dp"
-            android:text="OOO님은 최대 O건의 장학금을 받을 수 있어요!"
-            app:layout_below="searchView"
-            app:layout_constraintBottom_toTopOf="@+id/imageButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/searchView"
-            app:layout_constraintWidth_percent="0.8" />
+            <ImageButton
+                android:id="@+id/alarm"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/alarm"
+                app:layout_constraintStart_toEndOf="@+id/searchView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
+            <ImageButton
+                android:id="@+id/like"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/like"
+                app:layout_constraintStart_toEndOf="@+id/alarm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/bannerSlider"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/scholarCal"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <CalendarView
-            android:id="@+id/scholarCal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:showWeekNumber="false"
+            android:layout_height="300dp"
+            app:auto_cycle="true"
+            app:corner_radius="5"
+            app:delay="0"
+            app:layout_constraintTop_toBottomOf="@id/topBar"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+            app:period="1000" />
+        <!--
+
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="OOO님은 최대 O건의 장학금을 받을 수 있어요!"
+                    app:layout_below="searchView"
+                    app:layout_constraintBottom_toTopOf="@+id/imageButton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.295"
+                    app:layout_constraintStart_toStartOf="@+id/searchView"
+                    app:layout_constraintWidth_percent="0.8" />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    app:layout_constraintBottom_toTopOf="@+id/scholarCal"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <CalendarView
+                    android:id="@+id/scholarCal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:showWeekNumber="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageButton" /> -->
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
