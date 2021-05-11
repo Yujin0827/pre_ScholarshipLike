@@ -11,7 +11,7 @@ open class MainActivity : AppCompatActivity() {
 
     //탭 화면 변수 생성
     private val hometab = HomeTabActivity()
-    private val scholartab = ScholarshipTabActivity()
+    private val scholarshiptab = ScholarshipTabActivity()
     private val magazinetab = MagazineTabActivity()
     private val profiletab = ProfileTabActivity()
 
@@ -19,7 +19,9 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        changeFragment(hometab)     //첫 화면 = hometab
         initNavigationBar()
+
     }
 
     //하단바 누르면 탭 화면 전환
@@ -31,7 +33,7 @@ open class MainActivity : AppCompatActivity() {
                         changeFragment(hometab)
                     }
                     R.id.scholarshipTab -> {
-                        changeFragment(scholartab)
+                        changeFragment(scholarshiptab)
                     }
                     R.id.magazineTab -> {
                         changeFragment(magazinetab)

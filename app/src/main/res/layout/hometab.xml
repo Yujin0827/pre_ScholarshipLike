@@ -9,18 +9,88 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="match_parent" >
 
-<!--        <ViewFlipper-->
-<!--            android:id="@+id/banner"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content" >-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/bannerSlider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" >
 
-<!--            <LinearLayout-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-<!--        </ViewFlipper>-->
+            <SearchView
+                android:id="@+id/searchView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/logo"
+                app:layout_constraintWidth_percent="0.7" />
+
+            <ImageButton
+                android:id="@+id/alarm"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/alarm"
+                app:layout_constraintStart_toEndOf="@+id/searchView"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/like"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/like"
+                app:layout_constraintStart_toEndOf="@+id/alarm"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.denzcoskun.imageslider.ImageSlider
+            android:id="@+id/bannerSlider"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:auto_cycle="true"
+            app:corner_radius="5"
+            app:delay="0"
+            app:layout_constraintTop_toBottomOf="@id/topBar"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:period="1000" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OOO님은 최대 O건의 장학금을 받을 수 있어요!"
+            app:layout_constraintStart_toStartof="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bannerSlider" />
+
+        <CalendarView
+            android:id="@+id/scholarCal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:showWeekNumber="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
