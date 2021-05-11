@@ -23,12 +23,11 @@ open class MainActivity : AppCompatActivity() {
         var toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
+
         // 실행 시 메인화면 hometab으로 설정
         changeFragment(hometab)
 
-        //하단바
         initNavigationBar()
-
 
     }
 
