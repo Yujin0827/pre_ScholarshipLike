@@ -6,7 +6,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
 
-
 open class MainActivity : AppCompatActivity() {
 
     //탭 화면 변수 생성
@@ -52,6 +51,7 @@ open class MainActivity : AppCompatActivity() {
                 true
             }
         }
+
     }
 
     //하단바 - 탭 화면(프래그먼트) 연결
