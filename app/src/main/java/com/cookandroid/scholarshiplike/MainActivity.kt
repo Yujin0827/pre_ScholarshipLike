@@ -1,39 +1,33 @@
 package com.cookandroid.scholarshiplike
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import com.cookandroid.scholarshiplike.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.activity_main.*
-
 
 open class MainActivity : AppCompatActivity() {
 
     //탭 화면 변수 생성
     private val hometab = HomeTabActivity()
-    private val scholartab = ScholarshipTabActivity()
+    private val scholarshiptab = ScholarshipTabActivity()
     private val magazinetab = MagazineTabActivity()
     private val profiletab = ProfileTabActivity()
-
-    private val binding by lazy{ ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //좋아요 누른 게시물
-        setContentView(binding.root)
-
         // 툴바 설정
         var toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        // 실행 시 메인화면 hometab으로 설정
-        changeFragment(hometab)
+        changeFragment(hometab)     //첫 화면 = hometab
 
-        //하단바
         initNavigationBar()
+
     }
 
     //하단바 누르면 탭 화면 전환
@@ -46,7 +40,7 @@ open class MainActivity : AppCompatActivity() {
                     }
 
                     R.id.scholarshiptab -> {
-                        changeFragment(scholartab)
+                        changeFragment(scholarshiptab)
                     }
                     R.id.magazinetab -> {
                         changeFragment(magazinetab)
