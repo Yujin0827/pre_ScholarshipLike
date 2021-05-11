@@ -20,12 +20,13 @@ open class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        /*
         // 툴바 설정
         var toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
+        */
 
         changeFragment(hometab)     //첫 화면 = hometab
-
         initNavigationBar()
 
     }
@@ -35,17 +36,17 @@ open class MainActivity : AppCompatActivity() {
         tabNav.run {
             setOnNavigationItemSelectedListener {
                 when(it.itemId) {
-                    R.id.hometab -> {
+                    R.id.homeTab -> {
                         changeFragment(hometab)
                     }
 
-                    R.id.scholarshiptab -> {
+                    R.id.scholarshipTab -> {
                         changeFragment(scholarshiptab)
                     }
-                    R.id.magazinetab -> {
+                    R.id.magazineTab -> {
                         changeFragment(magazinetab)
                     }
-                    R.id.profiletab -> {
+                    R.id.profileTab -> {
                         changeFragment(profiletab)
                     }
                 }

@@ -20,6 +20,7 @@
 
     </FrameLayout>
 
+    <!-- 툴바 레이아웃 입니다 (include 해서 사용).
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
@@ -28,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/tabNav"
         android:layout_width="match_parent"

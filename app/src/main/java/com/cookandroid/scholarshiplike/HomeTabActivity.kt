@@ -11,9 +11,6 @@ class HomeTabActivity : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.hometab, container, false)
-        val actionbar = (activity as MainActivity).supportActionBar
-        actionbar
-
 
         return view
     }
