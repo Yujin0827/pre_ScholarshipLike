@@ -14,4 +14,16 @@ class ProfileTabActivity : Fragment() {
 
         return view
     }
+
+    // 프래그먼트 생성시 툴바 hide
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
+
+    // 프래그먼트 종료시 툴바 show
+    override fun onStop() {
+        super.onStop()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+    }
 }
