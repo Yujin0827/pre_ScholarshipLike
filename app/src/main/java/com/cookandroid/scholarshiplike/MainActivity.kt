@@ -16,14 +16,15 @@ open class MainActivity : AppCompatActivity() {
     private val magazinetab = MagazineTabActivity()
     private val profiletab = ProfileTabActivity()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /* 툴바 주석처리 하였습니다
+        //툴바 설정
         var toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-        */
+        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         changeFragment(hometab)     //첫 화면 = hometab
         initNavigationBar()
