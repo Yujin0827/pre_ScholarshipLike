@@ -5,8 +5,6 @@
     android:layout_height="match_parent">
 
     <!-- 탭 화면 -->
-    <!-- 하단바 -->
-
     <FrameLayout
         android:id="@+id/nav"
         android:layout_width="match_parent"
@@ -32,7 +30,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/tabNav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         app:backgroundTint="#FFFFFF"
         app:itemIconTint="#000000"
         app:itemTextColor="#000000"
