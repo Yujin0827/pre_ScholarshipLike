@@ -17,6 +17,7 @@ class HomeTabActivity : Fragment() {
     }
 
 
+
     // 프래그먼트 생성시 툴바 hide
     override fun onResume() {
         super.onResume()
