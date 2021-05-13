@@ -39,7 +39,7 @@
                     android:layout_weight="2.5"
                     android:adjustViewBounds="true"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_profile_user" />
+                    android:src="@drawable/ic_profiletab_usericon" />
 
                 <TextView
                     android:id="@+id/txtProfileChange"

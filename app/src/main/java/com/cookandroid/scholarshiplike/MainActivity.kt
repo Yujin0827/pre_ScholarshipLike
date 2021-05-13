@@ -26,7 +26,7 @@ open class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        changeFragment(hometab)     //첫 화면 = hometab
+        // changeFragment(hometab)     //첫 화면 = hometab
         initNavigationBar()
 
     }
