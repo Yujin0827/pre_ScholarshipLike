@@ -39,7 +39,6 @@ open class MainActivity : AppCompatActivity() {
                     R.id.homeTab -> {
                         changeFragment(hometab)
                     }
-
                     R.id.scholarshipTab -> {
                         changeFragment(scholarshiptab)
                     }

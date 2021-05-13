@@ -70,7 +70,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bannerSlider" />
-
+<!--
         <com.google.android.gms.ads.AdView
             xmlns:ads="http://schemas.android.com/apk/res-auto"
             android:id="@+id/adView"
@@ -79,9 +79,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/scholarCnt"
-            ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
-
+            ads:adSize="50dp"
+            ads:adUnitId="" />
+-->
         <CalendarView
             android:id="@+id/scholarCal"
             android:layout_width="match_parent"
@@ -91,7 +91,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/adView" />
+            app:layout_constraintTop_toBottomOf="@+id/scholarCnt" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
