@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="incomeList">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </integer-array>
+
+    <string-array name="kind">
+        <item>"특목고"</item>
+        <item>"일반계고"</item>
+        <item>"특성화고"</item>
+        <item>"영재고"</item>
+    </string-array>
+
+    <string-array name="local">
+        <item>"서울"</item>
+        <item>"일반계고"</item>
+        <item>"특성화고"</item>
+        <item>"영재고"</item>
+    </string-array>
+
+</resources>
