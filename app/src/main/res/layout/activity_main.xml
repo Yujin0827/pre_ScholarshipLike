@@ -5,12 +5,10 @@
     android:layout_height="match_parent">
 
     <!-- 탭 화면 -->
-    <!-- 하단바 -->
-
     <FrameLayout
         android:id="@+id/nav"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/tabNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -20,11 +18,12 @@
 
     </FrameLayout>
 
+    <!-- 툴바 include -->
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +31,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/tabNav"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         app:backgroundTint="#FFFFFF"
         app:itemIconTint="#000000"
         app:itemTextColor="#000000"
