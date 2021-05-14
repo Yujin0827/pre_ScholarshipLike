@@ -12,4 +12,5 @@
     <string name="app_info">앱 정보</string>
     <string name="inquiry">문의</string>
     <string name="logout">로그아웃</string>
+    <string name="save">저장</string>
 </resources>
