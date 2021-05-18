@@ -1,11 +1,13 @@
 package com.cookandroid.scholarshiplike
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.profiletab.*
 
 class ProfileTabActivity : Fragment() {
 
@@ -25,5 +27,17 @@ class ProfileTabActivity : Fragment() {
     override fun onStop() {
         super.onStop()
         (activity as AppCompatActivity?)!!.supportActionBar!!.show()
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        //'내 조건 수정' 클릭 리스너 - MyConChangeActivity 실행
+        profileList_changeCondition.setOnClickListener {
+            activity?.let{
+                val intent = Intent(context, MyConChangeActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 }
