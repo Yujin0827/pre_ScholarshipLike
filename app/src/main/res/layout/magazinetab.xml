@@ -22,23 +22,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!--툴바랑 겹쳐서 임시로 만듬        -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal"/>
-
-<!--        내 돈 어디에 쓸까? -->
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="400px"
+            android:layout_height="350px"
+            android:layout_centerInParent="true"
             android:gravity="center"
             android:text="내 돈 어디에 쓸까?"
             android:textSize="70px"
             android:textStyle="bold" />
 
-        <!--리니어 레이아웃 안에 전체, 금융, 생활, 기타 버튼-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="43dp"
@@ -71,22 +64,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="기타" />
-
-
         </LinearLayout>
 
-        <!--        매거진 목록 스크롤 뷰-->
-        <ScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/MagazineRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent" />
 
-            <!--            목록 리스트 뷰 -->
-            <ListView
-                android:id="@+id/mainListView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </ScrollView>
 
     </LinearLayout>
 
