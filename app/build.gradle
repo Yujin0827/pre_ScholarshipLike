@@ -46,4 +46,12 @@ dependencies {
     // recyclerview
     //implementation "androidx.recyclerview:recyclerview:1.2.0"
     //implementation "androidx.recyclerview:recyclerview-selection:1.1.0"
+
+    //tab
+    //noinspection GradleCompatible
+
+    //ScholarTab
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design: 29.0.0'
+
 }

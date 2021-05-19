@@ -1,8 +1,6 @@
 package com.cookandroid.scholarshiplike
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
@@ -26,7 +24,7 @@ open class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        changeFragment(hometab)     //첫 화면 = hometab
+        //changeFragment(hometab)     //첫 화면 = hometab
         initNavigationBar()
 
     }
@@ -51,8 +49,6 @@ open class MainActivity : AppCompatActivity() {
                 }
                 true
             }
-
-            //test
         }
     }
 
