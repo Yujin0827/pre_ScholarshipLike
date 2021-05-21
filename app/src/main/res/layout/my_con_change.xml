@@ -9,9 +9,10 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-16dp">
+        tools:layout_editor_absoluteY="-16dp"
+        app:layout_constraintBottom_toTopOf="@id/conditionSaveLayout">
 
         <!-- 조건 수정 Layout -->
         <LinearLayout
@@ -29,14 +30,19 @@
                 android:layout_gravity="bottom">
 
                 <!-- 테이블 1행 - 소득분위, 가족관계 -->
-                <TableRow>
+                <TableRow
+                    android:paddingLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
                     <!-- 소득분위 Layout -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -44,10 +50,12 @@
                             android:text="@string/income" />
 
                         <Spinner
-                            android:id="@+id/spinner_income"
+                            android:id="@+id/myIncome"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp" />
+                            android:layout_marginLeft="10dp"
+                            android:entries="@array/incomeList"/>
+
                     </LinearLayout>
 
                     <!-- 가족관계 Layout -->
@@ -55,108 +63,128 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/family_rel" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="horizontal">
-
-                            <CheckBox
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="20dp"
-                                android:text="@string/family_rel_dad" />
-
-                            <CheckBox
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/family_rel_mom" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="horizontal">
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="형제자매"
-                                android:textColor="@color/text_black" />
+                                android:text="@string/family_rel" />
 
-                            <EditText
+                            <LinearLayout
+                                android:id="@+id/myParent"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:ems="2"
-                                android:inputType="number"
-                                android:maxLength="2" />
+                                android:layout_marginLeft="10dp"
+                                android:orientation="horizontal">
 
-                            <TextView
+                                <CheckBox
+                                    android:id="@+id/myPrentDad"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="20dp"
+                                    android:text="@string/family_rel_dad" />
+
+                                <CheckBox
+                                    android:id="@+id/myParentMom"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/family_rel_mom" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/myChildren"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="째 중"
-                                android:textColor="@color/text_black" />
+                                android:layout_marginLeft="10dp"
+                                android:orientation="horizontal">
 
-                            <EditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:ems="2"
-                                android:inputType="number"
-                                android:maxLength="2" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="형제자매"
+                                    android:textColor="@color/text_black" />
 
-                        </LinearLayout>
+                                <EditText
+                                    android:id="@+id/myChildAll"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ems="2"
+                                    android:inputType="number"
+                                    android:maxLength="2" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="째 중"
+                                    android:textColor="@color/text_black" />
+
+                                <EditText
+                                    android:id="@+id/myChildMe"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:ems="2"
+                                    android:inputType="number"
+                                    android:maxLength="2" />
+
+                            </LinearLayout>
 
                     </LinearLayout>
 
                 </TableRow>
 
                 <!-- 테이블 2행 - 재학 여부, 이수 학기 -->
-                <TableRow>
+                <TableRow
+                    android:paddingLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
                     <!-- 재학 여부 Layout -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/school_att_leav" />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="horizontal">
-
-                            <RadioGroup
+                            <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="@string/school_att_leav" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
                                 android:orientation="horizontal">
 
-                                <RadioButton
+                                <RadioGroup
+                                    android:id="@+id/myAttending"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginRight="20dp"
-                                    android:text="@string/school_attending" />
+                                    android:orientation="horizontal">
 
-                                <RadioButton
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/school_leaving" />
+                                    <RadioButton
+                                        android:id="@+id/myAttendIn"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="20dp"
+                                        android:text="@string/school_attending"
+                                        android:textSize="12sp" />
 
-                            </RadioGroup>
-                        </LinearLayout>
+                                    <RadioButton
+                                        android:id="@+id/myAttendOut"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/school_leaving"
+                                        android:textSize="12sp" />
+
+                                </RadioGroup>
+                            </LinearLayout>
+
                     </LinearLayout>
 
                     <!-- 이수학기 Layout -->
@@ -164,7 +192,10 @@
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -172,84 +203,50 @@
                             android:text="@string/semester" />
 
                         <Spinner
+                            android:id="@+id/mySemester"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:entries="@array/semester" />
+                            android:layout_marginLeft="10dp" />
                     </LinearLayout>
 
                 </TableRow>
 
-                <!-- 테이블 3행 - 출신 고등학교, 직전 학기(이수학점, 성적) -->
-                <TableRow>
+                <!-- 테이블 3행 - 직전 학기(이수학점, 성적) -->
+                <TableRow
+                    android:paddingLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    <!-- 출신 고등학교 Layout -->
+                    <!-- 거주지 Layout -->
                     <LinearLayout
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/high_school" />
+                            android:text="@string/area" />
 
-                        <!-- 출신 고등학교 - 지역 Layout -->
-                        <LinearLayout
+                        <Spinner
+                            android:id="@+id/myArea"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="@string/high_school_area" />
-
-                            <RadioGroup
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <RadioButton
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/high_school_area_rural" />
-
-                                <RadioButton
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="@string/high_school_area_etc" />
-                            </RadioGroup>
-                        </LinearLayout>
-
-                        <!-- 출신 고등학교 - 종류 Layout -->
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:text="@string/high_school_type" />
-
-                            <Spinner
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:entries="@array/kind" />
-                        </LinearLayout>
-
+                            android:entries="@array/local"/>
                     </LinearLayout>
 
                     <!-- 직전 학기(이수학점, 성적) Layout -->
                     <LinearLayout
+                        android:id="@+id/myPreSemesterLayout"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -268,9 +265,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="@string/pre_semester_grade" />
+                                android:text="@string/pre_semester_grade"
+                                android:textColor="@color/text_black" />
 
                             <EditText
+                                android:id="@+id/myPreGrade"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:ems="2"
@@ -288,9 +287,11 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:text="@string/pre_semester_score" />
+                                android:text="@string/pre_semester_score"
+                                android:textColor="@color/text_black" />
 
                             <EditText
+                                android:id="@+id/myScore"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:ems="3"
@@ -302,64 +303,19 @@
                 </TableRow>
 
                 <!-- 테이블 4행 - 거주지, 국적 -->
-                <TableRow>
+                <TableRow
+                    android:paddingLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                    <!-- 추가사항 Layout -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/area" />
-
-                        <Spinner
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:entries="@array/local" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/country" />
-
-                        <RadioGroup
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:orientation="horizontal">
-
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/country_local" />
-
-                            <RadioButton
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/country_foreigner" />
-                        </RadioGroup>
-                    </LinearLayout>
-                </TableRow>
-
-                <!-- 테이블 5행 - 추가사항(국가유공자, 장애여부) -->
-                <TableRow>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp">
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -372,23 +328,57 @@
                             android:layout_marginLeft="10dp"
                             android:orientation="vertical">
 
+                            <!-- 국가유공자 -->
                             <CheckBox
+                                android:id="@+id/myNationalMerit"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/extra_national_merit" />
 
+                            <!-- 장애 여부 -->
                             <CheckBox
+                                android:id="@+id/myDisabled"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/extra_disabled" />
                         </LinearLayout>
                     </LinearLayout>
 
-                    <!-- TableRow 모양 맞추기 위한 빈 열 -->
+                    <!-- 국적 Layout -->
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/country" />
+
+                        <RadioGroup
+                            android:id="@+id/myCountry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/myCountryIn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/country_local" />
+
+                            <RadioButton
+                                android:id="@+id/myCountryOut"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/country_foreigner" />
+                        </RadioGroup>
+                    </LinearLayout>
                 </TableRow>
 
             </TableLayout>
@@ -399,21 +389,24 @@
 
     <!-- "저장" 버튼 Layout -->
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:gravity="center">
+        android:id="@+id/conditionSaveLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center">
 
             <!-- "저장" 버튼 -->
         <Button
+            android:id="@+id/myConditionSave"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#5752FF"
             android:text="@string/save"
             android:textColor="#ffffff"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginBottom="15dp"/>
 
-        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

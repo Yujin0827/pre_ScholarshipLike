@@ -1,5 +1,7 @@
 package com.cookandroid.scholarshiplike
 
+import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -17,9 +19,12 @@ open class MainActivity : AppCompatActivity() {
     private val profiletab = ProfileTabActivity()
 
 
+    @SuppressLint("SourceLockedOrientationActivity")    //세로로 화면 고정
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT //세로로 화면 고정
 
         //툴바 설정
         var toolbar = findViewById<Toolbar>(R.id.toolbar)
