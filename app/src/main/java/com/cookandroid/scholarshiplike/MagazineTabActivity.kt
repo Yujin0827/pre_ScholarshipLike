@@ -1,14 +1,11 @@
 package com.cookandroid.scholarshiplike
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.*
 import kotlinx.android.synthetic.main.magazinetab.*
@@ -35,6 +32,7 @@ class MagazineTabActivity : Fragment() {
                 postList?.add(item)
             }
             Log.d("postList", postList.toString())
+            magazinerecyclerView.adapter?.notifyDataSetChanged()
         }
     }
 
@@ -67,7 +65,8 @@ class MagazineTabActivity : Fragment() {
 //            Post("대학 졸업까지 1억 모으기"),
 //            Post("안녕하세요 김민지입니당")
 //        )
-        magazinerecyclerView.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
+
+        magazinerecyclerView.layoutManager = LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false)
         magazinerecyclerView.setHasFixedSize(true) //리사이클러뷰 성능 개선 방안
 
         magazinerecyclerView.adapter = MagazineTabAdapter(postList)
