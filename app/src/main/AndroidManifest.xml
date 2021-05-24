@@ -11,11 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LikeContentActivity"></activity>
-        <activity
-            android:name=".bottom"
-            android:label="@string/title_activity_bottom" />
-        <activity android:name=".likeContent" />
+        <activity android:name=".LikeContentActivity"/>
+        <activity android:name=".AlarmActivity"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
