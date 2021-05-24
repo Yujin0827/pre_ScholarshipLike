@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.magazinetab.*
 
 class MagazineTabActivity : Fragment() {
 
-    private var firestore : FirebaseFirestore? = null// Firestore 인스턴스
+    private var firestore : FirebaseFirestore? = null // Firestore 인스턴스
     var postList : ArrayList<Post> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,16 +40,6 @@ class MagazineTabActivity : Fragment() {
         val view = inflater.inflate(R.layout.magazinetab, container, false)
 
         Log.v("OnCreateView", "ENTER")
-
-//            // ArrayList 비워줌
-//            postList?.clear()
-//
-//            for (snapshot in querySnapshot!!.documents) {
-//                var item = snapshot.toObject(Post::class.java)
-//                postList?.add(item!!)
-//            }
-//        }
-
         return view
     }
 
@@ -57,14 +47,6 @@ class MagazineTabActivity : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Log.v("OnViewCreated", "ENTER")
-
-//        val postList = arrayListOf(
-//            Post("대학생에게 추천하는 체크카드 TOP10"),
-//            Post("자취방 전기세 아끼는 법"),
-//            Post("소비를 줄여주는 좋은 습관들"),
-//            Post("대학 졸업까지 1억 모으기"),
-//            Post("안녕하세요 김민지입니당")
-//        )
 
         magazinerecyclerView.layoutManager = LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false)
         magazinerecyclerView.setHasFixedSize(true) //리사이클러뷰 성능 개선 방안
