@@ -1,12 +1,11 @@
 package com.cookandroid.scholarshiplike
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 open class MainActivity : AppCompatActivity() {
 
@@ -15,7 +14,6 @@ open class MainActivity : AppCompatActivity() {
     private val scholarshiptab = ScholarshipTabActivity()
     private val magazinetab = MagazineTabActivity()
     private val profiletab = ProfileTabActivity()
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
