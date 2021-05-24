@@ -28,10 +28,6 @@ open class MainActivity : AppCompatActivity() {
         changeFragment(hometab)     //첫 화면 = hometab
         initNavigationBar()
 
-        val intent = Intent(this, AlarmActivity::class.java)
-        startActivity(intent)
-        finish()
-
     }
 
     //하단바 누르면 탭 화면 전환
