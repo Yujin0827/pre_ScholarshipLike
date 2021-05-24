@@ -1,7 +1,6 @@
 package com.cookandroid.scholarshiplike
 
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -16,17 +15,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 open class MainActivity : AppCompatActivity(),
     BottomNavigationView.OnNavigationItemSelectedListener  {
 
-    lateinit var tabNav : BottomNavigationView  // 하단바 변수 생성
+    private val hometab = HomeTabActivity()
+
+    lateinit var tabNav : BottomNavigationView
 
     // onBackPressed 메소드 변수
     var backPressedTime : Long = 0
     val FINISH_INTERVAL_TIME = 2000
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // 하단바 변수 생성
         tabNav = findViewById<BottomNavigationView>(R.id.tabNav)
 
         // 툴바 설정
@@ -34,7 +35,9 @@ open class MainActivity : AppCompatActivity(),
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        // 하단바
+        supportFragmentManager.beginTransaction().replace(R.id.nav, hometab).commit()
+
+        // 하단바 연결
         tabNav.setOnNavigationItemSelectedListener(this)
     }
 
@@ -108,7 +111,6 @@ open class MainActivity : AppCompatActivity(),
         }
         super.onBackPressed()
 
-        val tabNav = findViewById<View>(R.id.tabNav) as BottomNavigationView
         updateBottomMenu(tabNav)
     }
 

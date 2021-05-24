@@ -12,14 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" >
+
+        <activity
+            android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MyConChangeActivity"/>
+
+        <!-- 검색창 -->
+        <activity android:name=".SearchWinActivity" />
+
+        <!-- 내 조건 수정 -->
+        <activity android:name=".MyConChangeActivity" />
+
     </application>
 
 </manifest>
