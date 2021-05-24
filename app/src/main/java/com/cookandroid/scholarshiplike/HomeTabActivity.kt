@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
@@ -28,7 +29,8 @@ class HomeTabActivity : Fragment() {
     lateinit var kosafWeb : ImageView   // 한국장학재단 사이트로 이동 버튼
     lateinit var univWeb : ImageView    // 교내 사이트로 이동 버튼
     lateinit var guessWeb : ImageView   // ? 이동 버튼
-    val scholarshiptab = ScholarshipTabActivity()
+
+    val scholarshiptab = ScholarshipTabActivity()   // scholarshiptab 변수
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.hometab, container, false)
@@ -44,9 +46,8 @@ class HomeTabActivity : Fragment() {
         // 장학금 탭으로 이동
         scholarCnt.setOnClickListener {
             activity?.getSupportFragmentManager()?.beginTransaction()
-                ?.replace(R.id.nav, scholarshiptab, "fragmnetId")
+                ?.replace(R.id.nav, scholarshiptab, "scholarshipTab")
                 ?.commit()
-            //tabNav.menu.findItem(R.id.scholarshipTab).isChecked = true
         }
 
         return view
