@@ -28,7 +28,7 @@
                 android:id="@+id/profileTitleIconLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="40px"
+                android:layout_marginLeft="30dp"
                 android:padding="10dp"
                 android:orientation="vertical">
 
@@ -39,7 +39,7 @@
                     android:layout_weight="2.5"
                     android:adjustViewBounds="true"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_profile_user" />
+                    android:src="@drawable/ic_profiletab_usericon" />
 
                 <TextView
                     android:id="@+id/txtProfileChange"
@@ -49,7 +49,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:text="@string/change_profile"
-                    android:paddingTop="2sp"
+                    android:paddingTop="6dp"
                     android:autoSizeTextType="uniform"
                     android:autoSizeMinTextSize="10sp"
                     android:autoSizeMaxTextSize="100sp"
@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:layout_marginLeft="40px"
+                android:layout_marginLeft="10dp"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -107,23 +107,23 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:orientation="vertical"
-            android:padding="25sp"
+            android:padding="30dp"
             app:layout_constraintTop_toBottomOf="@+id/profileTitleLayout"
             tools:layout_editor_absoluteX="-29dp">
 
             <!-- 내 조건 수정 -->
             <LinearLayout
-                android:id="@+id/profileList_changeCondition"
+                android:id="@+id/myConChange"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5sp"
+                android:layout_margin="6dp"
                 android:background="@drawable/border_profile_list"
                 android:gravity="left|center_vertical"
                 android:orientation="vertical"
-                android:paddingLeft="30sp"
-                android:paddingTop="15sp"
-                android:paddingRight="30sp"
-                android:paddingBottom="15sp"
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="15dp"
                 tools:ignore="RtlHardcoded">
 
                 <TextView
@@ -140,14 +140,14 @@
                 android:id="@+id/profileList_setAlarm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5sp"
+                android:layout_margin="6dp"
                 android:background="@drawable/border_profile_list"
                 android:gravity="left|center_vertical"
                 android:orientation="vertical"
-                android:paddingLeft="30sp"
-                android:paddingTop="15sp"
-                android:paddingRight="30sp"
-                android:paddingBottom="15sp">
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="15dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -160,19 +160,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="10sp">
+                    android:padding="10dp">
 
                     <!-- 알림설정 - 앱 전체 -->
                     <Switch
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:padding="10sp"
+                        android:padding="10dp"
                         android:text="@string/alarm_app_all" />
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="2sp"
+                        android:layout_height="2dp"
                         android:background="#c9c9c9" />
 
                     <!-- 알림설정 - 장학금 -->
@@ -180,12 +180,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:padding="10sp"
+                        android:padding="10dp"
                         android:text="@string/alarm_scholarship" />
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="2sp"
+                        android:layout_height="2dp"
                         android:background="#c9c9c9" />
 
                     <!-- 알림설정 - 매거진 -->
@@ -193,12 +193,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:padding="10sp"
+                        android:padding="10dp"
                         android:text="@string/alarm_magazine" />
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="2sp"
+                        android:layout_height="2dp"
                         android:background="#c9c9c9" />
                 </LinearLayout>
 
@@ -209,14 +209,14 @@
                 android:id="@+id/profileList_likePost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5sp"
+                android:layout_margin="6dp"
                 android:background="@drawable/border_profile_list"
                 android:gravity="left|center_vertical"
                 android:orientation="vertical"
-                android:paddingLeft="30sp"
-                android:paddingTop="15sp"
-                android:paddingRight="30sp"
-                android:paddingBottom="15sp">
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="15dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -231,14 +231,14 @@
                 android:id="@+id/profileList_appInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5sp"
+                android:layout_margin="6dp"
                 android:background="@drawable/border_profile_list"
                 android:gravity="left|center_vertical"
                 android:orientation="vertical"
-                android:paddingLeft="30sp"
-                android:paddingTop="15sp"
-                android:paddingRight="30sp"
-                android:paddingBottom="15sp">
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="15dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -254,14 +254,14 @@
                 android:id="@+id/profileList_inquiry"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5sp"
+                android:layout_margin="6dp"
                 android:background="@drawable/border_profile_list"
                 android:gravity="left|center_vertical"
                 android:orientation="vertical"
-                android:paddingLeft="30sp"
-                android:paddingTop="15sp"
-                android:paddingRight="30sp"
-                android:paddingBottom="15sp">
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="15dp">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -277,14 +277,14 @@
                 android:id="@+id/profileList_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5sp"
+                android:layout_margin="6dp"
                 android:background="@drawable/border_profile_list"
                 android:gravity="left|center_vertical"
                 android:orientation="vertical"
-                android:paddingLeft="30sp"
-                android:paddingTop="15sp"
-                android:paddingRight="30sp"
-                android:paddingBottom="15sp">
+                android:paddingLeft="30dp"
+                android:paddingTop="15dp"
+                android:paddingRight="30dp"
+                android:paddingBottom="15dp">
 
                 <TextView
                     android:layout_width="match_parent"
