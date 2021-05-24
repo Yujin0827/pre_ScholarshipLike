@@ -1,4 +1,7 @@
 package com.cookandroid.scholarshiplike
 
-class SearchResultActivity {
+import androidx.appcompat.app.AppCompatActivity
+
+class SearchResultActivity : AppCompatActivity() {
+
 }
