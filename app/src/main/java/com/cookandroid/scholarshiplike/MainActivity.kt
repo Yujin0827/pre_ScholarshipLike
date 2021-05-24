@@ -1,5 +1,6 @@
 package com.cookandroid.scholarshiplike
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -26,6 +27,10 @@ open class MainActivity : AppCompatActivity() {
 
         changeFragment(hometab)     //첫 화면 = hometab
         initNavigationBar()
+
+        val intent = Intent(this, AlarmActivity::class.java)
+        startActivity(intent)
+        finish()
 
     }
 

@@ -4,9 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-class MagazineAdapter (private var list: MutableList<TestData>): RecyclerView.Adapter<MagazineAdapter.MagazineItemViewHolder> (){
+class MagazineAdapter (private var list: MutableList<TestData>): ListAdapter<TestData, MagazineAdapter.MagazineItemViewHolder>(DiffCallback){
     // inner class로 ViewHolder 정의
     inner class MagazineItemViewHolder(itemView: View?): RecyclerView.ViewHolder(itemView!!) {
 
@@ -38,5 +40,21 @@ class MagazineAdapter (private var list: MutableList<TestData>): RecyclerView.Ad
     override fun onBindViewHolder(holder: MagazineAdapter.MagazineItemViewHolder, position: Int) {
         Log.d("ListAdapter", "===== ===== ===== ===== onBindViewHolder ===== ===== ===== =====")
         holder.bind(list[position], position)
+    }
+}
+
+object DiffCallback : DiffUtil.ItemCallback<TestData>() {
+    override fun areItemsTheSame(
+        oldItem: TestData,
+        newItem: TestData
+    ): Boolean {
+        return oldItem.getData1() == newItem.getData1()
+    }
+
+    override fun areContentsTheSame(
+        oldItem: TestData,
+        newItem: TestData
+    ): Boolean {
+        return oldItem == newItem
     }
 }

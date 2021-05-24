@@ -5,9 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-class ScholarshipAdapter (private var list: MutableList<TestData>): RecyclerView.Adapter<ScholarshipAdapter.ScholarItemViewHolder> () {
+class ScholarshipAdapter (private var list: MutableList<TestData>): ListAdapter<TestData, ScholarshipAdapter.ScholarItemViewHolder>(DiffCallback) {
 
     // inner class로 ViewHolder 정의
     inner class ScholarItemViewHolder(itemView: View?): RecyclerView.ViewHolder(itemView!!) {
