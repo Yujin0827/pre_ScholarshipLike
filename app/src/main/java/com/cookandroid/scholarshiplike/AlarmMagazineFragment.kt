@@ -14,9 +14,9 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_recycler.*
 
 class AlarmMagazineFragment: Fragment() {
-    private lateinit var listAdapter: MagazineAdapter
+    private lateinit var listAdapter: MagazineTabAdapter
     private var db = Firebase.firestore
-    var dataList: ArrayList<TestData> = arrayListOf()
+    var dataList: ArrayList<Post> = arrayListOf()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -28,7 +28,7 @@ class AlarmMagazineFragment: Fragment() {
             .get()      // 문서 가져오기
             .addOnSuccessListener { result ->
                 for (document in result) {  // 가져온 문서들은 result에 들어감
-                    val item = TestData(document.id, "asdasdasd", "asdfadf")
+                    val item = Post(document.id)
                     dataList.add(item)
                 }
                 listAdapter.submitList(dataList)
@@ -39,6 +39,7 @@ class AlarmMagazineFragment: Fragment() {
                 // 실패할 경우
                 Log.w("MainActivity", "Error getting documents: $exception")
             }
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -48,11 +49,11 @@ class AlarmMagazineFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // Fragment에서 전달받은 list를 넘기면서 ListAdapter 생성
-        listAdapter = MagazineAdapter(dataList)
+        listAdapter = MagazineTabAdapter(dataList)
         listView.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
         // RecyclerView.adapter에 지정
         listView.adapter = listAdapter
-
+9
     }
 
 }

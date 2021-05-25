@@ -2,6 +2,7 @@ package com.cookandroid.scholarshiplike
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_alarm.*
 
@@ -24,5 +25,11 @@ class AlarmActivity : AppCompatActivity() {
         TabLayoutMediator(alarm_tabLayout, alarm_viewpager){ tab, position->
             tab.text = tabLayoutTextArray[position]
         }.attach()
+
+        // 툴바 설정
+        var toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        toolbar.title = "알림"
     }
 }

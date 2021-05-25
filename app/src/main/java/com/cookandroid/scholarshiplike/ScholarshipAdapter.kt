@@ -5,10 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-class ScholarshipAdapter (private var list: MutableList<TestData>): ListAdapter<TestData, ScholarshipAdapter.ScholarItemViewHolder>(DiffCallback) {
+class ScholarshipAdapter (private var list: MutableList<TestData>): ListAdapter<TestData, ScholarshipAdapter.ScholarItemViewHolder>(DiffCallbackScholar) {
 
     // inner class로 ViewHolder 정의
     inner class ScholarItemViewHolder(itemView: View?): RecyclerView.ViewHolder(itemView!!) {
@@ -43,4 +44,20 @@ class ScholarshipAdapter (private var list: MutableList<TestData>): ListAdapter<
         holder.bind(list[position], position)
     }
 
+}
+
+object DiffCallbackScholar : DiffUtil.ItemCallback<TestData>() {
+    override fun areItemsTheSame(
+        oldItem: TestData,
+        newItem: TestData
+    ): Boolean {
+        return oldItem.getData1() == newItem.getData1()
+    }
+
+    override fun areContentsTheSame(
+        oldItem: TestData,
+        newItem: TestData
+    ): Boolean {
+        return oldItem == newItem
+    }
 }
