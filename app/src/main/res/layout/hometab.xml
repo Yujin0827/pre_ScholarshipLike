@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".HomeTabActivity" >
+    android:orientation="vertical" >
 
     <!-- 상단바 (로고, 검색창, 알람, 좋아요) -->
     <androidx.appcompat.widget.Toolbar
