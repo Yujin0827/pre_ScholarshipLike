@@ -23,8 +23,8 @@ class ScholarshipTabActivity : Fragment() {
     lateinit var alarm : ImageView      // 알람 페이지로 이동 버튼
     lateinit var myScholarButton: Button // 내 장학금 버튼
     lateinit var koreaScholarButton: Button // 전체 장학금 버튼
-    private var mf = MyScholarFragment()
-    private var kf = KoreaScholarFragment()
+    private var mf = FragmentMyScholar()
+    private var kf = FragmentKoreaScholar()
 
 
 
