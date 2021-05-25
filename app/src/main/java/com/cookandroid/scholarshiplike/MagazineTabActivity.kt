@@ -1,24 +1,24 @@
 package com.cookandroid.scholarshiplike
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.*
 import kotlinx.android.synthetic.main.magazinetab.*
 
 class MagazineTabActivity : Fragment() {
-
+    lateinit var postlistAdapter: MagazineTabAdapter
     private var firestore : FirebaseFirestore? = null // Firestore 인스턴스
     var postList : ArrayList<Post> = arrayListOf()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        Log.v("OnCreate", "ENTER")
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
 
         //매거진관련
         firestore = FirebaseFirestore.getInstance() // Firestore 인스턴스 초기화
@@ -29,16 +29,26 @@ class MagazineTabActivity : Fragment() {
 
             for (document in result) {  // 가져온 문서들은 result에 들어감
                 val item = Post(document["title"] as String)
-                postList?.add(item)
+                postList.add(item)
             }
             Log.d("postList", postList.toString())
-            magazinerecyclerView.adapter?.notifyDataSetChanged()
+            postlistAdapter.submitList(postList)
+        }?.addOnFailureListener { exception ->
+            // 실패할 경우
+            Log.w("MainActivity", "Error getting documents: $exception")
         }
+
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        Log.v("OnCreate", "ENTER")
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.magazinetab, container, false)
-
         Log.v("OnCreateView", "ENTER")
         return view
     }
@@ -48,9 +58,22 @@ class MagazineTabActivity : Fragment() {
 
         Log.v("OnViewCreated", "ENTER")
 
+        postlistAdapter = MagazineTabAdapter(postList)
+
         magazinerecyclerView.layoutManager = LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false)
         magazinerecyclerView.setHasFixedSize(true) //리사이클러뷰 성능 개선 방안
+        magazinerecyclerView.adapter = postlistAdapter
+    }
 
-        magazinerecyclerView.adapter = MagazineTabAdapter(postList)
+    // 프래그먼트 생성시 툴바 hide
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
+
+    // 프래그먼트 종료시 툴바 show
+    override fun onStop() {
+        super.onStop()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
     }
 }
