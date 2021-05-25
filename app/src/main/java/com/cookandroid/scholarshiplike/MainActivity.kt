@@ -23,11 +23,11 @@ open class MainActivity : AppCompatActivity(),
     var backPressedTime : Long = 0
     val FINISH_INTERVAL_TIME = 2000
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // 하단바 변수 생성
         tabNav = findViewById<BottomNavigationView>(R.id.tabNav)
 
         // 툴바 설정
@@ -40,7 +40,7 @@ open class MainActivity : AppCompatActivity(),
             .replace(R.id.nav, HomeTabActivity(), "homeTab")
             .commit()
 
-        // 하단바 연결
+        // 하단바
         tabNav.setOnNavigationItemSelectedListener(this)
     }
 
@@ -114,6 +114,7 @@ open class MainActivity : AppCompatActivity(),
         }
         super.onBackPressed()
 
+        val tabNav = findViewById<View>(R.id.tabNav) as BottomNavigationView
         updateBottomMenu(tabNav)
     }
 
