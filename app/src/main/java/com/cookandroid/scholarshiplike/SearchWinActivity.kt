@@ -11,17 +11,18 @@ import androidx.recyclerview.widget.RecyclerView
 class SearchWinActivity : AppCompatActivity() {
 
     lateinit var goBack : ImageView         //뒤로가기 버튼
-    lateinit var searchfield : EditText     //검색창
-    lateinit var searchButton : ImageButton //찾기 버튼
+    lateinit var searchBar : EditText     //검색창
+    lateinit var searchGoBtn : ImageView //찾기 버튼
     lateinit var resultList : RecyclerView  //검색 결과
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.searchwin)
 
-//        searchfield = findViewById<EditText>(R.id.toolbar)      //검색창
-//        searchButton = findViewById<ImageButton>(R.id.toolbar)  //찾기 버튼
-//        resultList = findViewById<RecyclerView>(R.id.toolbar)   //검색 결과
+        goBack = findViewById<ImageView>(R.id.goBack)
+        searchBar = findViewById<EditText>(R.id.searchBar)      //검색창
+        searchGoBtn = findViewById<ImageButton>(R.id.searchGoBtn)  //찾기 버튼
+        resultList = findViewById<RecyclerView>(R.id.toolbar)   //검색 결과
 
 
     }
