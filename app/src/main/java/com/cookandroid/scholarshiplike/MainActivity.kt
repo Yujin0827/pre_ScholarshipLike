@@ -35,7 +35,10 @@ open class MainActivity : AppCompatActivity(),
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        supportFragmentManager.beginTransaction().replace(R.id.nav, hometab).commit()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.nav, HomeTabActivity(), "homeTab")
+            .commit()
 
         // 하단바 연결
         tabNav.setOnNavigationItemSelectedListener(this)
