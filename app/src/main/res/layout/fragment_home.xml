@@ -48,7 +48,7 @@
             android:src="@drawable/searchwin" />
 
     </androidx.appcompat.widget.Toolbar>
-
+    
     <!-- 본문 -->
     <ScrollView
         android:layout_width="match_parent"
