@@ -6,17 +6,16 @@ import androidx.appcompat.widget.Toolbar
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_alarm.*
 
-
 class AlarmActivity : AppCompatActivity() {
     private var tabLayoutTextArray: ArrayList<String> = arrayListOf("전체", "장학금")
-    lateinit var viewAdapter: ViewPageAdapter
+    lateinit var viewAdapter: ViewPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alarm)
 
         //어댑터 생성, 연결
-        viewAdapter = ViewPageAdapter(this)
+        viewAdapter = ViewPagerAdapter(this)
         viewAdapter.addFragment(AlarmMagazineFragment())
         viewAdapter.addFragment(AlarmScholarshipFragment())
         alarm_viewpager.adapter = viewAdapter

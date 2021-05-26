@@ -30,7 +30,7 @@ class ScholarshipAdapter (private var list: MutableList<TestData>): ListAdapter<
 
     // ViewHolder에게 item을 보여줄 View로 쓰일 item_data_list.xml를 넘기면서 ViewHolder 생성
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScholarItemViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.like_content_item, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_like_content, parent, false)
         return ScholarItemViewHolder(view)
     }
 

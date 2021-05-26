@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class ViewPageAdapter(frags: FragmentActivity): FragmentStateAdapter(frags) {
+class ViewPagerAdapter(frags: FragmentActivity): FragmentStateAdapter(frags) {
     private val fragmentList = ArrayList<Fragment>()
 
     override fun getItemCount(): Int {
