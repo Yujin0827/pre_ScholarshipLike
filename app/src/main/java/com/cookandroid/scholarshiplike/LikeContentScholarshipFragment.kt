@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_recycler.*
 
 class LikeContentScholarshipFragment : Fragment() {
-
+/*
     // RecyclerView.adapter에 지정할 Adapter
     private lateinit var listAdapter: ScholarshipAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -31,5 +31,7 @@ class LikeContentScholarshipFragment : Fragment() {
         // RecyclerView.adapter에 지정
         listView.adapter = listAdapter
     }
+
+ */
 
 }

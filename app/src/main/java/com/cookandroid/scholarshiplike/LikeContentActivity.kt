@@ -6,6 +6,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_like_content.*
 
 class LikeContentActivity : AppCompatActivity() {
+    /*
     private var tabLayoutTextArray: ArrayList<String> = arrayListOf("매거진", "장학금")
     lateinit var viewAdapter: ViewPagerAdapter
 
@@ -39,4 +40,6 @@ data class TestData(private var data1: String, private var data2: String, privat
         return data3
     }
 
+
+     */
 }

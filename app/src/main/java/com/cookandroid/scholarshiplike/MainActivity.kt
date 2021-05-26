@@ -14,7 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 open class MainActivity : AppCompatActivity(),
     BottomNavigationView.OnNavigationItemSelectedListener  {
-
+/*
     private val hometab = HomeTabActivity()
 
     lateinit var tabNav : BottomNavigationView
@@ -117,5 +117,5 @@ open class MainActivity : AppCompatActivity(),
         val tabNav = findViewById<View>(R.id.tabNav) as BottomNavigationView
         updateBottomMenu(tabNav)
     }
-
+*/
 }

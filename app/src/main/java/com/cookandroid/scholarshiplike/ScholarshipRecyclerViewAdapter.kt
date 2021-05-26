@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
 class ScholarshipAdapter (private var list: MutableList<TestData>): ListAdapter<TestData, ScholarshipAdapter.ScholarItemViewHolder>(DiffCallbackScholar) {
-
+/*
     // inner class로 ViewHolder 정의
     inner class ScholarItemViewHolder(itemView: View?): RecyclerView.ViewHolder(itemView!!) {
 
@@ -60,4 +60,5 @@ object DiffCallbackScholar : DiffUtil.ItemCallback<TestData>() {
     ): Boolean {
         return oldItem == newItem
     }
+*/
 }
