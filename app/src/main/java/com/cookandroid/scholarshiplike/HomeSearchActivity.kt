@@ -1,19 +1,29 @@
 package com.cookandroid.scholarshiplike
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
+import android.widget.ImageButton
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.activity_alarm.*
 import kotlinx.android.synthetic.main.activity_like_content.*
 
-class LikeContentActivity : AppCompatActivity() {
+class SearchWinActivity : AppCompatActivity() {
+
     private var tabLayoutTextArray: ArrayList<String> = arrayListOf("매거진", "장학금")
+
     lateinit var viewAdapter: ViewPageAdapter
+    lateinit var searchBar : EditText       //검색창
+    lateinit var searchGoBtn : ImageView    //찾기 버튼
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_like_content)
+        setContentView(R.layout.searchwin)
+
+        searchBar = findViewById<EditText>(R.id.searchBar)          //검색창
+        searchGoBtn = findViewById<ImageButton>(R.id.searchGoBtn)   //찾기 버튼
 
         //어댑터 생성, 연결
         viewAdapter = ViewPageAdapter(this)
@@ -26,19 +36,4 @@ class LikeContentActivity : AppCompatActivity() {
             tab.text = tabLayoutTextArray[position]
         }.attach()
     }
-}
-
-data class TestData(private var data1: String, private var data2: String, private var data3: String){
-    fun getData1(): String? {
-        return data1
-    }
-
-    fun getData2(): String? {
-        return data2
-    }
-
-    fun getData3(): String? {
-        return data3
-    }
-
 }
