@@ -62,8 +62,8 @@ dependencies {
     //tab
     //noinspection GradleCompatible
 
-    //ScholarTab
-    //noinspection GradleCompatible
+    // ScholarTab
+    // noinspection GradleCompatible
     implementation 'com.android.support:design: 29.0.0'
 
 }

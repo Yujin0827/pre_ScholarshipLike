@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SearchWinActivity" >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/searchTopBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="left|center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="50dp"
+            android:hint="검색어 입력"
+            android:textSize="25sp"
+            android:background="@null" />
+
+        <ImageView
+            android:id="@+id/searchGoBtn"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="right|center"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/searchwin" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <View
+        android:id="@+id/divline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#03A9F4"
+        app:layout_constraintTop_toBottomOf="@+id/searchTopBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/search_tabLayout"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divline"
+        app:tabIndicatorColor="@color/colorPrimaryDark" >
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="장학금" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매거진" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/like_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_tabLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
