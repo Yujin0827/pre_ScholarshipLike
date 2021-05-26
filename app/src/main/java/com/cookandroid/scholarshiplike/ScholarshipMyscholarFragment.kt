@@ -9,16 +9,14 @@ import android.view.ViewGroup
 /**
  * A simple [Fragment] subclass.
  */
-class MyScholarFragment : Fragment() {
+class ScholarshipMyscholarFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_my_scholar, container, false)
+        return inflater.inflate(R.layout.fragment_scholarship_myscholar, container, false)
     }
-
 
 }
