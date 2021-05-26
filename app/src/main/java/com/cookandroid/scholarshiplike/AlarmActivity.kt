@@ -7,6 +7,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.activity_alarm.*
 
 class AlarmActivity : AppCompatActivity() {
+    /*
     private var tabLayoutTextArray: ArrayList<String> = arrayListOf("전체", "장학금")
     lateinit var viewAdapter: ViewPagerAdapter
 
@@ -30,5 +31,6 @@ class AlarmActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         toolbar.title = "알림"
+     */
     }
 }

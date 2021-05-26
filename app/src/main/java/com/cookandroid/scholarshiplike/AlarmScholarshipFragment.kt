@@ -14,6 +14,7 @@ import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_recycler.*
 
 class AlarmScholarshipFragment: Fragment() {
+    /*
     private var db = Firebase.firestore
     private lateinit var listAdapter: ScholarshipAdapter
     var dataList: ArrayList<TestData> = arrayListOf()
@@ -55,5 +56,7 @@ class AlarmScholarshipFragment: Fragment() {
         // RecyclerView.adapter에 지정
         listView.adapter = listAdapter
     }
+
+     */
 }
 
