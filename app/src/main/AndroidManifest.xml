@@ -22,7 +22,16 @@
         </activity>
 
         <!-- 검색창 -->
-        <activity android:name=".SearchWinActivity" />
+        <!--
+        <activity android:name=".SearchWinActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+
+        -->
 
         <!-- 내 조건 수정 -->
         <activity android:name=".MyConChangeActivity" />
