@@ -24,7 +24,7 @@ open class MainActivity : AppCompatActivity(),
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+       setContentView(R.layout.activity_main)
 
         tabNav = findViewById<BottomNavigationView>(R.id.tabNav)
 
@@ -77,7 +77,7 @@ open class MainActivity : AppCompatActivity(),
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
         transaction.commit()
         transaction.isAddToBackStackAllowed
-        
+
         return true
     }
 
