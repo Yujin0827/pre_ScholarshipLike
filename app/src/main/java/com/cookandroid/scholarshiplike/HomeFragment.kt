@@ -82,21 +82,21 @@ class HomeTabActivity : Fragment() {
 
         // 한국장학재단 웹사이트로 이동
         kosafWeb.setOnClickListener {
-            var uri = Uri.parse("www.kosaf.go.kr")
+            var uri = Uri.parse("http://www.kosaf.go.kr")
             var intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
 
         // 교내 웹사이트로 이동
         univWeb.setOnClickListener {
-            var uri = Uri.parse("www.kosaf.go.kr")
+            var uri = Uri.parse("http://www.kosaf.go.kr")
             var intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }
 
         // ? 웹사이트로 이동
         guessWeb.setOnClickListener {
-            var uri = Uri.parse("www.kosaf.go.kr")
+            var uri = Uri.parse("http://www.kosaf.go.kr")
             var intent = Intent(Intent.ACTION_VIEW, uri)
             startActivity(intent)
         }

@@ -10,7 +10,6 @@
     app:layout_constraintBottom_toBottomOf="parent"
     tools:context=".ScholarshipTabActivity">
 
-
     <!-- 상단바 (알람, 좋아요) -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/topBar"
