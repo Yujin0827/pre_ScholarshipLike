@@ -5,20 +5,16 @@ import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.LinearLayout
-import android.widget.Spinner
+import android.widget.*
 
-class MyConChangeActivity : AppCompatActivity() {
+class ProfileMyConChangeActivity : AppCompatActivity() {
     private lateinit var mySemester : Spinner
-    private lateinit var myHighSchoolLayout : LinearLayout
     private lateinit var myPreSemesterLayout : LinearLayout
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.my_con_change)
+        setContentView(R.layout.activity_profile_my_con_change)
 
         mySemester = findViewById(R.id.mySemester)
         myPreSemesterLayout = findViewById(R.id.myPreSemesterLayout)
@@ -47,15 +43,19 @@ class MyConChangeActivity : AppCompatActivity() {
 
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                 when(mySemester.getItemAtPosition(position).toString()) {
-                    "0" -> {  //이수학기 0일 때 : '직전 학기' Layout 비활성화
-                        //구현해야함
-                        println("-----------<Test>----------------")
-                        println("'직전 학기' Layout 비활성화")
+                    "0" -> {  //이수학기 0일 때 : '직전 학기' 비활성화
+                        findViewById<TextView>(R.id.txtMyPreSemester).alpha = 0.5F
+                        findViewById<TextView>(R.id.txtMyPreGrade).alpha = 0.3F
+                        findViewById<TextView>(R.id.txtMyScore).alpha = 0.3F
+                        findViewById<EditText>(R.id.myPreGrade).isEnabled = false
+                        findViewById<EditText>(R.id.myScore).isEnabled = false
                     }
-                    else -> {   //이수학기 1 이상일 때 : '직전 학기' Layout 활성화
-                        //구현해야함
-                        println("------------<Test>----------------")
-                        println("'직전 학기' Layout 활성화")
+                    else -> {   //이수학기 1 이상일 때 : '직전 학기' 활성화
+                        findViewById<TextView>(R.id.txtMyPreSemester).alpha = 1F
+                        findViewById<TextView>(R.id.txtMyPreGrade).alpha = 1F
+                        findViewById<TextView>(R.id.txtMyScore).alpha = 1F
+                        findViewById<EditText>(R.id.myPreGrade).isEnabled = true
+                        findViewById<EditText>(R.id.myScore).isEnabled = true
                     }
                 }
             }

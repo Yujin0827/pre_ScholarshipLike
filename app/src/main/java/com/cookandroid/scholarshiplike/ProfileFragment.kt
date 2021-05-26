@@ -8,16 +8,17 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.profiletab.*
 
-class ProfileTabActivity : Fragment() {
+class ProfileFragment : Fragment() {
 
     lateinit var myConChange : LinearLayout
+    lateinit var logout : LinearLayout
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.profiletab, container, false)
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
 
         myConChange = view.findViewById<LinearLayout>(R.id.myConChange)
+        logout = view.findViewById<LinearLayout>(R.id.logout)
 
         return view
     }
@@ -38,11 +39,20 @@ class ProfileTabActivity : Fragment() {
         //'내 조건 수정' 클릭 리스너 - MyConChangeActivity 실행
         myConChange.setOnClickListener {
             activity?.let {
-                val intent = Intent(it, MyConChangeActivity::class.java)
+                val intent = Intent(it, ProfileMyConChangeActivity::class.java)
                 it?.startActivity(intent)
             }
         }
 
+        //'로그아웃' 클릭 리스너 - 팝업창 띄우기
+        logout.setOnClickListener {
+            showLogoutPopup()
+        }
+
         super.onActivityCreated(savedInstanceState)
+    }
+
+    fun showLogoutPopup() {
+
     }
 }
