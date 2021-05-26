@@ -15,8 +15,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 open class MainActivity : AppCompatActivity(),
     BottomNavigationView.OnNavigationItemSelectedListener  {
 
-    private val hometab = HomeTabActivity()
-
     lateinit var tabNav : BottomNavigationView
 
     // onBackPressed 메소드 변수
@@ -79,6 +77,7 @@ open class MainActivity : AppCompatActivity(),
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
         transaction.commit()
         transaction.isAddToBackStackAllowed
+        
         return true
     }
 
